@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from candidate.views import CandidateView
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('candidates/', CandidateView.as_view()),
 
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("candidates/", CandidateView.as_view()),
 ]

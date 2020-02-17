@@ -7,13 +7,11 @@ from scores.models import Scores
 
 class CandidateView(ListView):
     model = Candidate
-
-    ordering = ['name']
+    ordering = ["name"]
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        highest = Scores.objects.values_list('score').order_by('score').last()
+        highest = Scores.objects.values_list("score").order_by("score").last()
         if highest:
-            context['highest'] = highest[0]
+            context["highest"] = highest[0]
         return context

@@ -10,5 +10,6 @@ def get_candidate(name=None, referance=None):
     if user_id == 0:
         user_id = launch_query(
             """INSERT into candidate_candidate (candidate_reference, name) VALUES ('%s', '%s')"""
-            % (referance, name))
+            % (referance, name)
+        )
     return user_id
