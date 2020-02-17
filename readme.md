@@ -46,4 +46,24 @@ The import and sort scripts have been written in pure Python.
     python manage.py runserver 0.0.0.0:8000
     ```
     
- 6. 
+ ## Running the importer script
+ the script assumes that the csv is in the files folder and is called candidates.csv
+ 
+ ```python
+    python importer.py
+```
+
+The code displays a message advising if a result has been added, 
+If the Candidate reference is invalid(In this case Candiate is not 
+created) and if the score is outside of the range (0.0-100.0)
+
+
+
+## Running the Sorted Script
+
+```python
+    python sorter.py
+```
+The script imports the json file and sorted the results by score before outputting
+to a csv file called sorted.csv(this is created in the files folder)
+
