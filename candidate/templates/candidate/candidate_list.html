@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Candidate Names
+        </th>
+        <th>
+            Candidate Scores
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    {% for candidate in object_list %}
+        <tr>
+            <td>
+                {{ candidate.name }}
+            </td>
+            <td>
+                {% for score in candidate.get_scores %}
+
+                        <span {% if highest == score %}style="color:red; font-weight: bold"{% endif %}>
+                            {{ score }}
+                        </span>
+
+                {% endfor %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
